@@ -191,7 +191,7 @@ public class Wine {
 
 	@Override
 	public String toString() {
-		return "Wine [id=" + id + ", name=" + name + ", year=" + year + ", rating=" + rating + ", num_reviews="
+		return "[id=" + id + ", name=" + name + ", year=" + year + ", rating=" + rating + ", num_reviews="
 				+ num_reviews + ", price=" + price + ", body=" + body + ", acidity=" + acidity + ", winery=" + winery
 				+ ", type=" + type + ", region=" + region + "]";
 	}
