@@ -57,10 +57,12 @@ public class WineController {
 		
 	}
 	
-	/*@GetMapping ("/api/recommend/best?top=10")
-	public Set<Wine> bestWines() {
-		return wineService.
+	//RECOMENDS
+	
+	@GetMapping ("/api/recommend/best")
+	public List<Wine> bestWines() {
+		return wineService.top10Rated();
 		
-	}*/
+	}
 
 }

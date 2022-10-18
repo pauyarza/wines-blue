@@ -7,8 +7,10 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import com.gft.wine.Wine;
 import com.gft.wineRepositories.WineRepository;
@@ -18,6 +20,8 @@ import com.gft.wineRepositories.WineRepository;
 public class WineService {
 	@Autowired
 	private WineRepository wineRepository;	
+	
+	
 	
 
 	//Find All -GET
@@ -67,10 +71,12 @@ public class WineService {
 	
 	//Recommendations - GET
 	
-	/*public Set<Wine> theBest(Wine rating) {
-		List<Wine> bestRating= new ArrayList<>();
+	
+	public List<Wine> top10Rated() {
 		
-		}*/
+		List<Wine> topG = wineRepository.getTop10().subList(0, 10);
+		return topG;
+	}
 		
 		
 		
