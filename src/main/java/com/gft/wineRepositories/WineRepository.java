@@ -17,6 +17,12 @@ public interface WineRepository extends JpaRepository <Wine,Integer> {
 	@Query("select w from Wine w order by w.rating desc")
 	List<Wine> getTop10();
 	
+	@Query("select w from Wine w order by w.price desc")
+	List<Wine> getPricier();
+	
+	@Query("select w from Wine w order by w.rating desc, w.price asc")
+	List<Wine> getBanger();
+	
 }
 
 

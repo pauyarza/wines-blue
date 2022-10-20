@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -72,10 +73,22 @@ public class WineService {
 	//Recommendations - GET
 	
 	
-	public List<Wine> top10Rated() {
+	public List<Wine> top10Rated(Integer top) {
 		
-		List<Wine> topG = wineRepository.getTop10().subList(0, 10);
+		List<Wine> topG = wineRepository.getTop10().subList(0, top);
 		return topG;
+	}
+	
+	public List<Wine> pricier(Integer top) {
+		
+		List<Wine> topP = wineRepository.getPricier().subList(0, top);
+		return topP;
+	}
+	
+	public List<Wine> banger(Integer top) {
+		
+		List<Wine> topB = wineRepository.getBanger().subList(0, top);
+		return topB;
 	}
 		
 		
